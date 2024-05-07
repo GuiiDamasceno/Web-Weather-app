@@ -11,6 +11,7 @@ import { Input } from "../../components/Input";
 
 import { api } from "../../services/api";
 
+
 export function Home() {
   const [city, setCity] = useState('')
   const [weatherData, setWeatherData] = useState('')
