@@ -55,7 +55,6 @@ export function Home() {
       if (data.message) {
         alert('Cidade inválida. Por favor, digite o nome da cidade corretamente.')
       } else {
-        console.log(data)
         setWeatherData(data)
       }
     } catch (error) {
