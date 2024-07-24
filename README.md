@@ -6,23 +6,54 @@ Modelo de Website de previsão do tempo simples usando React e duas APIs [OpenWe
 
 
 <p align="center">
-<img src="https://github.com/ArizArmeidi/FlutterWeather/assets/60814961/ab3f4a18-e6bb-4688-b70b-305611d7e8b5" width="20%"></img> 
-<img src="https://github.com/ArizArmeidi/FlutterWeather/assets/60814961/95cba2e0-62b7-40b5-93b2-f16ee95c96a1" width="20%"></img> 
-<img src="https://github.com/ArizArmeidi/FlutterWeather/assets/60814961/9638b4d9-ec4d-4401-9052-dacaac2f7ef6" width="20%"></img> 
-<img src="https://github.com/ArizArmeidi/FlutterWeather/assets/60814961/5189de89-1a3d-499a-867b-d12b856653a6" width="20%"></img>
+<img src="https://github.com/GuiiDamasceno/Web-Weather-app/blob/main/assets/OpenMeteoImage.png" width="50%"></img> 
+<img src="https://github.com/GuiiDamasceno/Web-Weather-app/blob/main/assets/OpenWeatherImage.png" width="50%"></img> 
 </p>
+
+##  Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- ViteJS;
+- JavaScript;
+- ReactJS.
 
 ## API Docs   
 > [!IMPORTANT] 
-> This project uses **_version 2.5_** of the OpenWeatherMap API</br>
+> Este projeto usou **_versão 2.5_** de OpenWeatherMap API e **_versão 1.0_** de Open-Meteo</br>
 > **API used in this project**:</br>
+
+#### OpenWeatherMap API:
 > - [Current Weather API Docs](https://openweathermap.org/current#one)</br>
-> - [One Call API Docs](https://openweathermap.org/api/one-call-api#data)</br>
 > - [Geocoding API Docs](https://openweathermap.org/api/geocoding-api)</br>
 
+#### Open-Meteo API:
+> - [Daily Weather Forecast API Docs](https://open-meteo.com/en/docs)</br>
+> - [Geocoding API Docs](https://open-meteo.com/en/docs/geocoding-api)</br>
 
-## Features      
-- Automatically acquire user current location
-- Searchable location
-- Hourly weather information
-- 7 days weather information          
+## Funcionalidades      
+- Adquire a localização do usuário automaticamente.
+- Caixa de pesquisa para cidades
+- Informações do tempo diárias
+- 5 dias futuros de previsão do tempo.
+
+## Como Executar
+1. Crie uma conta em [OpenWeatherMap](https://openweathermap.org/).
+2. Depois pegue sua key em https://home.openweathermap.org/api_keys.
+   >Para testar se sua key está funcionando, copie e cole o link a seguir em seu navegador.</br>
+   >https://api.openweathermap.org/data/2.5/weather?lat=53.4794892&lon=-2.2451148&units=metric&appid=YOUR_API_KEY</br>
+   >Substitua `YOUR_API_KEY` com sua API key de OpenWeatherMap
+3. Clone o repo
+   ```sh
+   https://github.com/GuiiDamasceno/Web-Weather-app.git
+   ```
+4. Navegue até **services/api** e substitua a variável 'key' por sua API key.
+   ```dart
+   key = 'Paste Your API Key Here';
+   ```
+5. Rode o app
+
+## 
+  <p align="center">
+    Desenvolvido por: Guilherme Damasceno
+  </p>
