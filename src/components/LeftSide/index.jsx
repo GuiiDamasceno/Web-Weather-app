@@ -12,10 +12,16 @@ import {
   WiDayThunderstorm,
 } from 'react-icons/wi'
 
+import cleanSkyImage from '../../../public/clean-sky.jpg'
+import cloudySkyImage from '../../../public/clouds-sky.jpg'
+import rainImage from '../../../public/rain.jpg'
+import stormImage from '../../../public/storm.jpg'
+
 export function LeftSide({ data, data2, city, country }) {
 
   let openWeatherDescription = ''
   let openMeteoIcon
+  let openWeatherImage
 
   let openWeatherIcon
 
@@ -35,35 +41,44 @@ export function LeftSide({ data, data2, city, country }) {
       case '01d':
       case '01n':
         openWeatherIcon = <WiDaySunny />
+        openWeatherImage = cleanSkyImage
         break;
       case '02d':
       case '02n':
         openWeatherIcon = <WiDayCloudy />
+        openWeatherImage = cloudySkyImage
         break;
       case '03d':
       case '03n':
       case '04d':
       case '04n':
         openWeatherIcon = <WiCloudy />
+        openWeatherImage = cloudySkyImage
         break;
       case '09d':
       case '09n':
         openWeatherIcon = <WiDayRainMix />
+        openWeatherImage = rainImage
         break;
       case '10d':
       case '10n':
         openWeatherIcon = <WiDayRain />
+        openWeatherImage = rainImage
         break;
       case '11d':
       case '11n':
         openWeatherIcon = <WiDayThunderstorm />
+        openWeatherImage = stormImage
         break;
       case '13d':
       case '13n':
         openWeatherIcon = <WiSnowflakeCold />
+        openWeatherImage = stormImage
         break;
       default:
         openWeatherIcon = <WiDaySunny />
+        openWeatherImage = cleanSkyImage
+
     }
   }
 
@@ -74,17 +89,20 @@ export function LeftSide({ data, data2, city, country }) {
       case 0:
         openWeatherDescription = 'Céu Limpo';
         openMeteoIcon = <WiDaySunny />
+        openWeatherImage = cleanSkyImage
         break;
       case 1:
       case 2:
       case 3:
         openWeatherDescription = 'Parcialmente nublado';
         openMeteoIcon = <WiCloudy />
+        openWeatherImage = cloudySkyImage
         break;
       case 43:
       case 48:
         openWeatherDescription = 'Nevoeiro';
         openMeteoIcon = <WiDayRainMix />
+        openWeatherImage = cloudySkyImage
         break;
       case 51:
       case 53:
@@ -93,6 +111,7 @@ export function LeftSide({ data, data2, city, country }) {
       case 57:
         openWeatherDescription = 'Chuva leve';
         openMeteoIcon = <WiDayRain />
+        openWeatherImage = rainImage
         break;
       case 61:
       case 63:
@@ -101,6 +120,7 @@ export function LeftSide({ data, data2, city, country }) {
       case 67:
         openWeatherDescription = 'Chuva';
         openMeteoIcon = <WiDayRain />
+        openWeatherImage = rainImage
         break;
       case 71:
       case 73:
@@ -108,21 +128,25 @@ export function LeftSide({ data, data2, city, country }) {
       case 77:
         openWeatherDescription = 'Neve';
         openMeteoIcon = <WiSnowflakeCold />
+        openWeatherImage = rainImage
         break;
       case 80:
       case 81:
       case 82:
         openWeatherDescription = 'Pancadas de chuva';
         openMeteoIcon = <WiDaySleetStorm />
+        openWeatherImage = stormImage
         break;
       case 85:
       case 86:
         openWeatherDescription = 'Pancadas de neve';
         openMeteoIcon = <WiDaySnowWind />
+        openWeatherImage = stormImage
         break;
       case 95:
         openWeatherDescription = 'Trovoada';
         openMeteoIcon = <WiDayThunderstorm />
+        openWeatherImage = stormImage
         break;
       case 96:
       case 99:
@@ -131,6 +155,7 @@ export function LeftSide({ data, data2, city, country }) {
       default:
         openWeatherDescription = 'Céu Limpo'
         openMeteoIcon = <WiDaySunny />
+        openWeatherImage = cleanSkyImage
     }
   }
 
@@ -140,7 +165,7 @@ export function LeftSide({ data, data2, city, country }) {
         data && (
           <div
             className="left-info"
-            style={{ backgroundImage: `url('https://source.unsplash.com/1600x900/?" + ${data.city.name} city + "')` }}
+            style={{ backgroundImage: `url("${openWeatherImage}")` }}
           >
             <div className="pic-gradient" />
             <div className="today-info">
@@ -166,7 +191,7 @@ export function LeftSide({ data, data2, city, country }) {
         data2 && (
           <div
             className="left-info"
-            style={{ backgroundImage: "url('https://source.unsplash.com/1600x900/?" + city + "')" }}
+            style={{ backgroundImage: `url("${openWeatherImage}")` }}
           >
             <div className="pic-gradient" />
             <div className="today-info">
